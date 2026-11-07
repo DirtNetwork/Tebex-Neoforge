@@ -175,22 +175,6 @@ project(":folia") {
     }
 }
 
-listOf(
-    "fabric-26.1",
-    "fabric-26.2"
-).forEach { projectName ->
-    val fabricProject = project(":$projectName")
-    fabricProject.configure<JavaPluginExtension> {
-        sourceSets {
-            getByName("main") {
-                java {
-                    srcDir("src/main/kotlin")
-                }
-            }
-        }
-    }
-}
-
 project(":forge-26.1") {
     java {
         toolchain {
